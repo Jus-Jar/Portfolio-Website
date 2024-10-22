@@ -11,3 +11,19 @@
         document.body.classList.toggle("light-mode");
     })
 })();
+
+function loadSection(sectionId, filePath) {
+
+    fetch(filePath)
+        .then(response => response.text())
+        .then(data => document.getElementById(sectionId).innerHTML = data)
+        .catch(error => console.error('Error loading section:', error));
+}
+
+// Load each section dynamically
+loadSection('about', 'pages/about.html');
+loadSection('portfolio', 'pages/portfolio.html');
+loadSection('contact', 'pages/contact.html');
+loadSection('platform', 'pages/platform.html');
+
+// loadSection('section3', 'section3.html');
