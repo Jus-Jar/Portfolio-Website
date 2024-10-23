@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -47,8 +48,13 @@
     <main>
         <section class="container about" id="about"></section>
         <section class="container" id="portfolio"></section>
-        <section class="container" id="platform"></section>
+        <section class="container" id="collaborated-projects"></section>
         <section class="container contact" id="contact"></section>
+        
+       <!-- Toast Notification -->
+        <div id="toast" class="toast">Email sent successfully!</div>
+
+  
     </main>
 
     <div class="controls">
@@ -61,8 +67,8 @@
         <div class="control" data-id="portfolio">
             <i class="fas fa-code"></i>
         </div>
-        <div class="control" data-id="platform">
-            <i class="far fa-newspaper"></i>
+        <div class="control" data-id="collaborated-projects">
+            <i class="fas fa-users"></i>
         </div>
         <div class="control" data-id="contact">
             <i class="fas fa-envelope-open"></i>
@@ -73,7 +79,7 @@
     </div>
     <script src="app.js"></script>
     <script src="text.js"></script>
-    <script src="email.js"></scriptsrc>
+    <script src="email.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>

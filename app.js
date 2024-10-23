@@ -24,6 +24,6 @@ function loadSection(sectionId, filePath) {
 loadSection('about', 'pages/about.html');
 loadSection('portfolio', 'pages/portfolio.html');
 loadSection('contact', 'pages/contact.html');
-loadSection('platform', 'pages/platform.html');
+loadSection('collaborated-projects', 'pages/communityProjects.html');
 
 // loadSection('section3', 'section3.html');
