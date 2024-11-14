@@ -8,8 +8,7 @@
         </p>
     </div>
     <div class="projects">
-        <h3>Coming Soon :)</h3>
-        <!-- <div class="project">
+        <div class="project" >
             <img src="img/blog1.jpg" alt="">
             <div class="icons">
                 <a href="#" class="icon">
@@ -22,9 +21,12 @@
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
-            <div class="project-text">
+            <div class="project-text" onclick="loadSection('project-info', 'pages/project-info.html')">
                 <h3><a href="#">Project 1</a></h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus natus voluptas, eos obcaecati recusandae amet?</p>
+                <div class="control" data-id-="project-info">
+                    <button>learn more</button>
+                </div>
             </div>
         </div>
         <div class="project">
@@ -82,7 +84,8 @@
                     This is a Web Service Application developed in Python to Convert Youtube Videos to downloadable Mp3 Files
                 </p>
             </div>
-        </div> -->
+        </div>
 
     </div>
 </div>
+<script src="app.js"></script>
