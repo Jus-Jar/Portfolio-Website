@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="main-content">
-    <header class="container header active" id="home">
-        <div class="header-content">
+    <header class="container header active" >
+        <div style="padding: 0;" class ="header-content content-section" id="home">
             <div class="left-header">
                 <div class="h-shape"></div>
                 <div class="image">
@@ -46,11 +46,25 @@
         </div>
     </header>
     <main>
-        <section class="container about" id="about"></section>
-        <section class="container" id="portfolio"></section>
-        <section class="container" id="collaborated-projects"></section>
-        <section class="container contact" id="contact"></section>
-        <section class="container" id="project-info"></section>
+        <main>
+            <div id= "about" class="content-section">
+                <section class="container about">Loading About Section...</section>
+            </div>
+            <div id="portfolio" class="content-section">
+                <section class="container" >Loading Portfolio Section...</section>
+            </div>
+            <div id="collaborated-projects" class="content-section">
+                <section class="container" >Loading Collaborated Projects Section...</section>
+            </div>
+            <div id="contact" class="content-section">
+                <section class="container contact" >Loading Contact Section...</section>
+            </div>
+            <!-- <div id="project-info" class="content-section"><section class="container" >Loading Project Info Section...</section></div> -->
+            
+            
+            
+            
+          </main>
        <!-- Toast Notification -->
         <div id="toast" class="toast">Email sent successfully!</div>
 
@@ -58,21 +72,31 @@
     </main>
 
     <div class="controls">
-        <div class="control active-btn" data-id="home" >
-            <i class="fas fa-home"></i>
-        </div>
-        <div class="control" data-id="about">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="control" data-id="portfolio">
-            <i class="fas fa-code"></i>
-        </div>
-        <div class="control" data-id="collaborated-projects">
-            <i class="fas fa-users"></i>
-        </div>
-        <div class="control" data-id="contact">
-            <i class="fas fa-envelope-open"></i>
-        </div>
+        <a href="#home">
+            <div class="control active-btn" data-id="home" >
+                <i class="fas fa-home"></i>
+            </div> 
+        </a>
+        <a href="#about">
+            <div class="control" data-id="about">
+                <i class="fas fa-user"></i>
+            </div>
+        </a>
+        <a href="#portfolio">
+            <div class="control" data-id="portfolio">
+                <i class="fas fa-code"></i>
+            </div>
+        </a>
+        <a href="#collaborated-projects">
+            <div class="control" data-id="collaborated-projects">
+                <i class="fas fa-users"></i>
+            </div>
+        </a>
+        <a href="#contact">
+            <div class="control" data-id="contact">
+                <i class="fas fa-envelope-open"></i>
+            </div>
+        </a>
     </div>
     <div class="theme-btn">
         <i class="fas fa-adjust"></i>

@@ -42,6 +42,12 @@ body {
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
 }
+html{
+  scroll-behavior: smooth; 
+  scroll-snap-type: y mandatory;
+  scroll-padding-bottom: 50vh;
+  overflow-y: scroll;
+}
 
 a {
   display: inline-block;
@@ -57,25 +63,38 @@ header {
   padding: 0 !important;
 }
 
+
 section {
   min-height: 100vh;
   width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 3rem 18rem;
+  padding: 2rem;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-out;
+}
+
+
+
+/* Add the class that will trigger the animation */
+.content-section {
+  opacity: 1;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-bottom: 20vh;
+  scroll-snap-align: start; /* Each section takes full viewport height */
+
 }
 
 .container {
-  display: none;
+  display:contents;
   transform: translateY(-100%) scale(0);
   transition: all 0.4s ease-in-out;
   background-color: var(--color-primary);
+   
 }
 
 .active {
   display: block;
-  animation: appear 1s ease-in-out;
+  /* animation: appear 1s ease-in-out; */
   transform: translateY(0) scaleY(1);
 }
 @keyframes appear {
@@ -271,7 +290,7 @@ section {
   max-width: 100%;
 }
 .about-container .left-about h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -341,7 +360,7 @@ section {
 } */
 
 .stat-title {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 1.4rem;
   text-align: center;
   padding: 3.5rem 0;
@@ -547,8 +566,10 @@ section {
   padding: 1.1rem;
   border-top: 8px solid var(--color-secondary);
 }
-.projects .project .project-text h3 {
+.projects .project .project-text h2 {
   color:  var(--color-secondary);
+  text-align: center;
+  
 }
 
 
@@ -740,6 +761,9 @@ section {
   header {
     padding: 0 !important;
   }
+  .content-section{
+    padding: 0 !important;
+  }
 
   .theme-btn {
     width: 50px;
@@ -919,6 +943,9 @@ section {
   .projects {
     grid-template-columns: repeat(1, 1fr);
   }
+  .content-section{
+    padding: 0 !important;
+  }
 
   .portfolios {
     grid-template-columns: repeat(1, 1fr);
@@ -945,6 +972,10 @@ section {
 @media screen and (max-width: 970px) {
   .container {
     padding: 7rem 6rem;
+  }
+  .content-section{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .about-container .left-about {
@@ -981,6 +1012,11 @@ section {
   .container {
     padding: 7rem 3rem;
   }
+
+  .content-section{
+    padding: 0 !important;
+  }
+
 
   .about-stats .progress-bars {
     grid-template-columns: repeat(1, 1fr);
@@ -1086,3 +1122,42 @@ section {
   transform: scale(1.05);
   color: var(--color-secondary);
 }
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 8px;
+  background-color: var(--color-secondary);
+  color: var(--color-grey-1);
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tag:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-grey-1);
+  border-color: var(--color-secondary);
+}
+
+/* Define a simple fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px); /* Move the element slightly down */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* Back to its original position */
+  }
+}
+
