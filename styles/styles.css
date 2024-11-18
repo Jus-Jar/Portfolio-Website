@@ -1128,6 +1128,7 @@ section {
   flex-wrap: wrap;
   gap: 10px;
   margin: 20px 0;
+  justify-content: center;
 }
 
 .tag {

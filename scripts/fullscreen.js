@@ -6,16 +6,67 @@ function viewFullScreen(imgElement) {
     fullScreenContainer.style.left = "0";
     fullScreenContainer.style.width = "100%";
     fullScreenContainer.style.height = "100%";
-    fullScreenContainer.style.backgroundColor = "black";
+    fullScreenContainer.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
     fullScreenContainer.style.zIndex = "9999";
+    fullScreenContainer.style.display = "flex";
+    fullScreenContainer.style.alignItems = "center";
+    fullScreenContainer.style.justifyContent = "center";
+    fullScreenContainer.style.overflow = "hidden"; // Prevent scrollbars
 
     // Create the image element
     const img = document.createElement("img");
-    img.src = imgElement.src; // Set the clicked image source
-    img.style.width = "100vw"; // Full viewport width
-    img.style.height = "100vh"; // Full viewport height
-    img.style.objectFit = "cover"; // Ensures the image covers the screen while maintaining aspect ratio
-    img.style.position = "absolute";
+    img.src = imgElement.src;
+    img.style.maxWidth = "100%";
+    img.style.maxHeight = "100%";
+    img.style.objectFit = "contain";
+    img.style.transition = "transform 0.3s ease"; // Smooth zoom transition
+    img.style.cursor = "grab"; // Indicate draggable image when zoomed
+
+    let scale = 1; // Zoom level
+    let startX = 0, startY = 0; // For dragging
+    let isDragging = false;
+
+    // Handle zoom in/out with mouse wheel
+    fullScreenContainer.onwheel = (e) => {
+        e.preventDefault();
+        const zoomSpeed = 0.1;
+        scale += e.deltaY < 0 ? zoomSpeed : -zoomSpeed;
+        scale = Math.min(Math.max(scale, 1), 5); // Restrict zoom levels between 1x and 5x
+        img.style.transform = `scale(${scale})`;
+    };
+
+    // Handle dragging when zoomed
+    img.onmousedown = (e) => {
+        if (scale > 1) {
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            img.style.cursor = "grabbing";
+        }
+    };
+
+    img.onmousemove = (e) => {
+        if (isDragging && scale > 1) {
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            startX = e.clientX;
+            startY = e.clientY;
+            const currentTransform = img.style.transform.match(/translate\((.*?)px, (.*?)px\)/);
+            const currentX = currentTransform ? parseFloat(currentTransform[1]) : 0;
+            const currentY = currentTransform ? parseFloat(currentTransform[2]) : 0;
+            img.style.transform = `scale(${scale}) translate(${currentX + dx}px, ${currentY + dy}px)`;
+        }
+    };
+
+    img.onmouseup = () => {
+        isDragging = false;
+        img.style.cursor = "grab";
+    };
+
+    img.onmouseleave = () => {
+        isDragging = false;
+        img.style.cursor = "grab";
+    };
 
     // Create the close button
     const closeButton = document.createElement("button");
@@ -37,7 +88,7 @@ function viewFullScreen(imgElement) {
         if (document.fullscreenElement || document.webkitFullscreenElement) {
             document.exitFullscreen?.() || document.webkitExitFullscreen?.();
         }
-        document.body.removeChild(fullScreenContainer); // Remove the container from DOM
+        document.body.removeChild(fullScreenContainer);
     };
 
     // Append the image and close button to the container
@@ -48,10 +99,9 @@ function viewFullScreen(imgElement) {
     // Request fullscreen for the container
     if (fullScreenContainer.requestFullscreen) {
         fullScreenContainer.requestFullscreen();
-    } else if (fullScreenContainer.webkitRequestFullscreen) { // For Safari
+    } else if (fullScreenContainer.webkitRequestFullscreen) {
         fullScreenContainer.webkitRequestFullscreen();
-    } else if (fullScreenContainer.msRequestFullscreen) { // For IE/Edge
+    } else if (fullScreenContainer.msRequestFullscreen) {
         fullScreenContainer.msRequestFullscreen();
     }
 }
-
