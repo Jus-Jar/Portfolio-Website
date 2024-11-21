@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Project Overview</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        
+    :root {
+    --color-primary: #191d2b;
+    --color-secondary: #0970be;
+    --color-white: #FFFFFF;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #dbe1e8;
+    --color-grey-2: #b2becd;
+    --color-grey-3: #6c7983;
+    --color-grey-4: #454e56;
+    --color-grey-5: #2a2e35;
+    --color-grey-6: #12181b;
+    --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+    }
+
+    .light-mode {
+    --color-primary: #FFFFFF;
+    --color-secondary: #F56692;
+    --color-white: #454e56;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #6c7983;
+    --color-grey-2: #6c7983;
+    --color-grey-3: #6c7983;
+    --color-grey-4: #454e56;
+    --color-grey-5: #f8f8f8;
+    --color-grey-6: #12181b;
+    }
+        body{
+         padding-left: 6rem;
+         padding-right: 6rem;
+        }
+
+        h2{
+            padding-top: 10px;
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+            text-align: justify;
+            font-size:medium;
+        }
+        span{
+            color: var(--color-secondary);
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .carousel-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-inner img {
+            object-fit: cover; /* Ensure image covers the slide area */
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+        }
+        .desc-img{
+            padding-left: 2rem;
+            padding-right: 2rem; 
+            width: 100%;         /* Image width matches the container */
+            height: auto;        /* Maintain aspect ratio */
+            object-fit: cover;
+            max-height: 80%;
+    
+            
+        }
+        .tags-container{
+            justify-content: center;
+        }
+
+        .card2-container {
+            width: 100%;
+            max-width: 400px;
+        }
+        .card2 {
+            background-color: var(--color-grey-4);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card2-icon {
+            font-size: 30px;
+            color: #4caf50;
+            margin-right: 15px;
+        }
+        .card2-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--color-grey-0);
+            
+        }
+        .about-container .project-right-about {
+        display: grid;
+        grid-gap: 2rem;
+        justify-content: center;
+        }
+        .content-box{
+            padding: 2rem;
+            padding-top: 0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%; /* Full width */
+            padding-bottom: 56.25%; /* Aspect ratio: 16:9 (height is 9/16 of the width) */
+            height: 0; /* Height is controlled by padding-bottom */
+            overflow: hidden; /* Ensures no content spills out */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Full width of the container */
+            height: 100%; /* Full height of the container */
+            border: 0; /* Removes the iframe border */
+            padding-bottom: 1rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+
+    @media screen and (max-width: 1432px) {
+    
+    }
+    @media screen and (max-width: 1250px) {
+
+    }
+
+    @media screen and (max-width: 1070px) {
+        body{
+         padding-left: 0;
+         padding-right: 0;
+        }
+    }
+    @media screen and (max-width: 970px) {
+        body{
+         padding-left: 0;
+         padding-right: 0;
+        }
+
+        .carousel-inner img {
+        object-fit: contain; /* Change fit mode for smaller screens */
+    }
+    }
+    @media screen and (max-width: 700px) {
+        .content-box{
+            padding: 2rem;
+        }
+        body{
+         padding-left: 0;
+         padding-right: 0;
+        }
+        .carousel-inner img {
+        object-fit: contain; /* Change fit mode for smaller screens */
+    }
+    }
+    @media screen and (max-width: 660px) {
+        body{
+         padding-left: 0;
+         padding-right: 0;
+        }
+        .carousel-inner img {
+        object-fit: contain; /* Change fit mode for smaller screens */
+    }
+    }
+    </style>
+</head>
+<body class="main-content">
+
+    <!-- Project Description Section -->
+    <div class="projects-content">
+        <div class="main-title">
+            <h2>Automated <span>Marking</span> System</h2>
+            <div class="tags-container">
+                <span class="tag">LLM</span>
+                <span class="tag">Prompt Engineering</span>
+                <span class="tag">Python</span>
+            </div>
+            <div class="about-container stat-title">
+                <div class="left-about">
+                    <div class="content-box">
+                        <h3>Project <span>Overview</span></h3>
+                        <p>
+                            The Automated Judge System for Object-Oriented Programming I assignments at UWISTA is designed to evaluate and grade 
+                            Java programming assignments efficiently and consistently. This system automates the grading process by assessing zipped 
+                            submissions based on naming conventions, functionality, abstraction, and adherence to object-oriented principles. With a 
+                            user-friendly graphical interface, lecturers can customize grading rubrics and generate test suites to meet specific assignment
+                             requirements. Each submission is evaluated within a strict 5-minute limit, with detailed PDF feedback provided, including test
+                              results and flagged issues. By streamlining the grading process, 
+                            this system ensures fairness, transparency, and time efficiency, benefiting both lecturers and students.
+                        </p>
+                    </div>
+                    
+                  </div>
+                <div class="project-right-about d-flex justify-content-center">
+                        <img class="desc-img" src="..\..\img\autograder.webp" onclick="viewFullScreen(this)" alt="Logo">
+                </div>
+                
+                
+                <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body text-center">
+                                <img id="modalImage" src="" alt="Enlarged View" class="img-fluid" style="max-height: 90vh; max-width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Features -->
+            <div class="about-container stat-title">
+                <div class="left-about">
+                    <div class="project-right-about d-flex justify-content-center">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                            <div class="carousel-item">
+                                <img class="d-block w-100 img-fluid" src="..\..\img\autograder\form.png" onclick="viewFullScreen(this)" alt="Third slide">
+                            </div>
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 img-fluid" src="..\..\img\autograder\welcome.png" onclick="viewFullScreen(this)" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 img-fluid" src="..\..\img\autograder\tests.png" onclick="viewFullScreen(this)" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 img-fluid" src="..\..\img\autograder\report.png" onclick="viewFullScreen(this)" alt="Third slide">
+                            </div>
+                            
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                            </a>
+                        </div>    
+                    </div>
+                </div>
+                <div class="project-right-about">
+                    <div class="content-box">
+                        <h3>Key <span>Features</span></h3>
+                        <ul>
+                            <li><p>1) The system evaluates assignments efficiently and consistently applies evaluation criteria and grading rubrics, reducing grading subjectivity.</p></li>
+                            <li><p>2) The system generates meaningful and transparent feedback such as test cases passed, pointing out specific errors and overall grade.</p></li>
+                            <li><p>3) The system saves time by assessing/grading assignments within a shorter time frame.</p></li>
+                            <li><p>4) The system offers flexibility for lecturers to customize grading criteria, rubrics and assessment parameters</p></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+
+            <!--Demo -->
+            <div class="about-container stat-title">
+                
+                <div class="left-about2">
+                    <h3>Demo <span>Video</span></h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/vlCUZXQLbZw?si=jTaz8r6AW2-R3ygO" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="project-right-about">
+                    <div class="card2-container">
+                        <h3>Project <span>Links</span></h3>
+                        <div class="card2" onclick="handleClick('https://github.com/COMP3607-Team6/COMP3607-Project/wiki/Design')">
+                            <span class="card2-icon">📄</span>
+                            <span class="card2-text">Project Documentation</span>
+                        </div>
+                        <div class="card2" onclick="handleClick('https://drive.google.com/file/d/1-O7WGF457ivF-xm20EQC6pPsxwckZlNH/view?usp=sharing')">
+                            <span class="card2-icon">📄</i></span>
+                            <span class="card2-text">UML Diagram</span>
+                        </div>
+                        <div class="card2" onclick="handleClick('https://comp3607-team6.github.io/COMP3607-Project/')">
+                            <span class="card2-icon">📄</i></span>
+                            <span class="card2-text">API Documentation</span>
+                        </div>
+                        <div class="card2" onclick="handleClick('https://github.com/COMP3607-Team6/COMP3607-Project')">
+                            <span class="card2-icon"><i class="fab fa-github"></i></span>
+                            <span class="card2-text">Github Repository</span>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!--Technology Stack -->
+            <div class="about-container stat-title">
+                <div class="left-about">
+                    <div class="content-box">
+                        <h3>Technology <span>Stack</span></h3>
+                        <p>
+                            The Automated Judge System for Object-Oriented Programming I assignments is built using Java as the core programming 
+                            language for its robustness and suitability for object-oriented design. The system leverages Maven as the build automation 
+                            and dependency management tool, ensuring streamlined project configuration, dependency resolution, and efficient handling of 
+                            test cases. Java’s extensive standard libraries and compatibility with Maven allow for the seamless integration of custom test suites and grading criteria. 
+                            Together, Java and Maven provide a reliable and scalable foundation for developing, testing, and deploying the system to meet the course's grading requirements effectively. 
+                        </p>
+                    </div>
+                    
+                  </div>
+
+                  <div class="project-right-about d-flex justify-content-center">
+                    <img class="desc-img" src="..\..\img\autograder.webp" onclick="viewFullScreen(this)" alt="Logo"> 
+                </div>
+            </div>
+
+            <!-- Upcoming Features -->
+            <div class="about-container stat-title">
+                <div class="left-about">
+                    <div class="project-right-about d-flex justify-content-center">
+                        <img class="desc-img" src="..\..\img\autograder.webp" onclick="viewFullScreen(this)" alt="Logo">
+                    </div>
+                </div>
+                <div class="project-right-about">
+                    <div class="content-box">
+                        <h3>Cont<span>ributions</span></h3>
+                        <ul>
+                            <li><p>1) Primarily worked on Design and Implementation of the Backend of the application </p></li>
+                            <li><p>2) Developed and implemented functionality for generating test cases for the autograde </p></li>
+                            <li><p>3) Tested input handling (e.g., zipped files adhering to size and class limits), ensuring accurate evaluation against the grading criteria, and confirming the
+                                 timely generation of detailed PDF feedback reports with clear test results and error flags. </p></li>
+                   
+                        </ul>
+                    </div>
+                </div>
+                </div>
+        
+            
+        </div>
+    </div>
+    <main>
+        <section class="container about" id="about"></section>
+        <section class="container" id="portfolio"></section>
+        <section class="container" id="collaborated-projects"></section>
+        <section class="container contact" id="contact"></section>
+        <section class="container" id="project-info"></section>
+       <!-- Toast Notification -->
+        <div id="toast" class="toast">Email sent successfully!</div>
+
+  
+    </main>
+
+    <div class="controls">
+        <a href="../../index.html#home">
+            <div class="control" data-id="home">
+                <i class="fas fa-home"></i>
+            </div>
+        </a>
+        <a href="../../index.html#about">
+            <div class="control" data-id="about">
+                <i class="fas fa-user"></i>
+            </div>
+        </a>
+        <a href="../../index.html#portfolio">
+            <div class="control active-btn" data-id="portfolio">
+                <i class="fas fa-code"></i>
+            </div>
+        </a>
+        <a href="../../index.html#collaborated-projects">
+            <div class="control" data-id="collaborated-projects">
+                <i class="fas fa-users"></i>
+            </div>
+        </a>
+        <a href="../../index.html#contact">
+            <div class="control" data-id="contact">
+                <i class="fas fa-envelope-open"></i>
+            </div>
+        </a>
+    </div>
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="../../scripts/fullscreen.js"></script>
+    <script>
+        document.querySelector(".theme-btn").addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+        });
+        function handleClick(url) {
+            // Check if the URL is valid
+            if (url) {
+                // Open the URL in a new tab
+                window.open(url, '_blank');
+            } else {
+                console.error('Invalid URL provided');
+            }
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
